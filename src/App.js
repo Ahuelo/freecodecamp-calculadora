@@ -4,13 +4,18 @@ import { Button } from './Button';
 import { Screen } from './Screen/index.jsx';
 import { ButtonClear } from './Clear';
 import { useState } from 'react';
+import { evaluate } from 'mathjs';
 
 function App() {
 
   const [input, setImput]=useState('');
+
   const agregarInput = val => {
     setImput(input+ val);
   };
+  const calcularResultado = () => {
+    setImput(evaluate(input));
+  }
 
   return (
     <div className='App'>
@@ -55,7 +60,7 @@ function App() {
         </div>
         <div className='fila'>
           <Button
-          manejarClick={agregarInput} >=</Button>
+          manejarClick={calcularResultado} >=</Button>
           <Button
           manejarClick={agregarInput} >0</Button>
           <Button
@@ -64,7 +69,9 @@ function App() {
           manejarClick={agregarInput} >/</Button>
         </div>
         <div className='fila'>
-          <ButtonClear>Clear</ButtonClear>
+          <ButtonClear
+          manejarClick={() => setImput('')} >
+            Clear</ButtonClear>
         </div>
       </div>
     </div>
