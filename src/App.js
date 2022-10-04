@@ -1,7 +1,8 @@
 import './App.css';
 import freeCodeCampLogo from './img/freecodecamp-logo.png'
 import { Button } from './Button';
-import { Pantalla } from './Screen';
+import { Screen } from './Screen/index.jsx';
+import { ButtonClear } from './Clear';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         alt='Logo de FreeCodeCamp' />
       </div>
       <div className='contenedor-calculadora'>
-        <Pantalla/>
+        <Screen/>
         <div className='fila'>
           <Button>7</Button>
           <Button>8</Button>
@@ -39,7 +40,7 @@ function App() {
           <Button>/</Button>
         </div>
         <div className='fila'>
-
+          <ButtonClear>Clear</ButtonClear>
         </div>
       </div>
     </div>

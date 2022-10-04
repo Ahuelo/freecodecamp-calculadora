@@ -1,10 +1,11 @@
 import React from 'react';
-import './Screen.css'
+import './screen.css';
 
-const Pantalla = ({ input }) =>{
-    <div className='input'>
-        {input}
-    </div>
-}
+const Screen = ({ input }) =>(
+        <div className='input'>
+            {input}
+        </div>
+    )
 
-export { Pantalla };
+
+export { Screen };
